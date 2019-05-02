@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 GAME RULES:
 
@@ -47,17 +49,17 @@ document.querySelector('.dice').style.display = 'none';
 
 function watchButtonClick() {
     console.log(GAME_VARIABLES.activePlayer)
-    document.querySelector('.btn-roll').addEventListener('click', (e) => {
-        e.stopImmediatePropagation();
+    document.querySelector('.btn-roll').addEventListener('click', function () {
+        // e.stopImmediatePropagation();
         rollDice();
     });
-    document.querySelector('.btn-hold').addEventListener('click', (e) => {
+    document.querySelector('.btn-hold').addEventListener('click', function () {
         console.log('hold button clicked');
-        e.stopImmediatePropagation();
+        // e.stopImmediatePropagation();
         changePlayerScore();
     });
-    document.querySelector('.btn-new').addEventListener('click', (e) => {
-        e.stopImmediatePropagation();
+    document.querySelector('.btn-new').addEventListener('click', function () {
+        // e.stopImmediatePropagation();
         console.log('new game button clicked');
     });
 
@@ -85,7 +87,7 @@ function changeCurrentScore(num) {
         GAME_VARIABLES.roundScore = GAME_VARIABLES.roundScore + num;
         console.log(GAME_VARIABLES.roundScore)
         document.querySelector('#current-' + GAME_VARIABLES.activePlayer).textContent = GAME_VARIABLES.roundScore;
-        watchButtonClick();
+        // watchButtonClick();
     }
     else {
         GAME_VARIABLES.roundScore = 0;
